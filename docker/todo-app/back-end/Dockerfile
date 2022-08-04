@@ -1,14 +1,12 @@
 FROM node:14
 
-WORKDIR /back-end
+WORKDIR /app
 
-ADD node_modules.tar.gz ./
+ADD node_modules.tar.gz ./node_modules
 
-COPY package*.json ./
+COPY . .
 
 RUN npm install 
-
-COPY ./src /back-end/src
 
 EXPOSE 3001
 
